@@ -51,7 +51,8 @@ class UnitPayForm extends UnitPay
     private function getUrl($key, array $params)
     {
         return [
-            $key => $this->getConfig('urls.pay') . $this->getConfig('keys.public') . '?' . http_build_query($params)
+            'desc' => $key,
+            'url'  => $this->getConfig('urls.pay') . $this->getConfig('keys.public') . '?' . http_build_query($params)
         ];
     }
 }
